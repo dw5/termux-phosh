@@ -10,3 +10,20 @@ exit #on termux
 termux-x11 :1
 proot-distro login alpine --shared-tmp
 export DISPLAY=:1
+
+
+
+### https://www.reddit.com/r/termux/comments/nifecr/deleted_by_user/
+proot-distro install alpine
+
+proot-distro login alpine
+
+apk add mesa-egl mesa mesa-dri-swrast gnome-backgrounds gnome-shell gnome-terminal gnome-tweak phosh wayvnc wlr-randr phoc
+
+export XDG_RUNTIME_DIR=/tmp
+
+export WLR_BACKENDS=headless
+
+phoc -E '/usr/libexec/phosh -U' &
+
+wayvnc
